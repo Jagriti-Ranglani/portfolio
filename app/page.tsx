@@ -38,9 +38,17 @@ export default function Page() {
 	};
 
 	useEffect(() => {
-		if (typeof window !== "undefined" && window.innerWidth < 1024) {
-			setSidebarOpen(false);
-		}
+		// Responsive sidebar handling
+		const handleResize = () => {
+			if (window.innerWidth < 1024) {
+				setSidebarOpen(false);
+			} else {
+				setSidebarOpen(true);
+			}
+		};
+
+		// Run once on mount
+		handleResize();
 
 		const handleScroll = () => {
 			if (window.scrollY > 400) {
@@ -50,11 +58,38 @@ export default function Page() {
 			}
 		};
 
+		window.addEventListener("resize", handleResize);
 		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
 
-	const setRef = (i) => (el) => (sectionRefs.current[i] = el);
+		// Scroll Spy / Intersection Observer
+		const observerOptions = {
+			root: null,
+			rootMargin: "-40% 0px -40% 0px", // Trigger when section is roughly in the middle
+			threshold: 0,
+		};
+
+		const observerCallback = (entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					const index = sectionRefs.current.findIndex((ref) => ref === entry.target);
+					if (index !== -1) {
+						setActiveSection(SECTIONS[index].id);
+					}
+				}
+			});
+		};
+
+		const observer = new IntersectionObserver(observerCallback, observerOptions);
+		sectionRefs.current.forEach((ref) => {
+			if (ref) observer.observe(ref);
+		});
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+			window.removeEventListener("scroll", handleScroll);
+			observer.disconnect();
+		};
+	}, []);
 
 	const scrollToTop = () => {
 		window.scrollTo({ top: 0, behavior: "smooth" });
@@ -103,21 +138,21 @@ export default function Page() {
 
 			<main className={`main${sidebarOpen ? "" : " main--wide"}`}>
 				<HomeSection
-					sRef={setRef(0)}
+					sRef={(el) => (sectionRefs.current[0] = el)}
 					index={0}
 					sectionRefs={sectionRefs}
 					totalSections={SECTIONS.length}
 				/>
-				<BiographySection sRef={setRef(1)} index={1} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
-				<PortfolioSection sRef={setRef(2)} index={2} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
-				<ServicesSection sRef={setRef(3)} index={3} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
-				<ExperienceSection sRef={setRef(4)} index={4} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
-				<ClientsSection sRef={setRef(5)} index={5} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
-				<ContactSection sRef={setRef(6)} index={6} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
+				<BiographySection sRef={(el) => (sectionRefs.current[1] = el)} index={1} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
+				<PortfolioSection sRef={(el) => (sectionRefs.current[2] = el)} index={2} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
+				<ServicesSection sRef={(el) => (sectionRefs.current[3] = el)} index={3} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
+				<ExperienceSection sRef={(el) => (sectionRefs.current[4] = el)} index={4} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
+				<ClientsSection sRef={(el) => (sectionRefs.current[5] = el)} index={5} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
+				<ContactSection sRef={(el) => (sectionRefs.current[6] = el)} index={6} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
 
 				<footer className="footer">
 					<span>
-						© 2026 <span className="footer-accent">Jagriti Ranglani</span>
+						&copy; 2026 <span className="footer-accent">Jagriti Ranglani</span>
 					</span>
 					<span>Full Stack Developer</span>
 				</footer>

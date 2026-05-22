@@ -14,13 +14,13 @@ function HomeSection({ sRef, index, sectionRefs, totalSections }) {
 				</div>
 				<div className="hero-code">
 					<div><span className="kw">const</span> developer = {"{"}</div>
-					<div>&nbsp;&nbsp;name: <span className="str">"JagritiRanglani"</span>,</div>
-					<div>&nbsp;&nbsp;role: <span className="str">"Full Stack Dev"</span>,</div>
-					<div>&nbsp;&nbsp;<span className="fn">stack</span>: [<span className="str">"React"</span>, <span className="str">"Laravel"</span>, <span className="str">"MySql"</span>],</div>
+					<div>&nbsp;&nbsp;name: <span className="str">&quot;JagritiRanglani&quot;</span>,</div>
+					<div>&nbsp;&nbsp;role: <span className="str">&quot;Full Stack Dev&quot;</span>,</div>
+					<div>&nbsp;&nbsp;<span className="fn">stack</span>: [<span className="str">&quot;React&quot;</span>, <span className="str">&quot;Laravel&quot;</span>, <span className="str">&quot;MySql&quot;</span>],</div>
 					<div>&nbsp;&nbsp;yearsExp: <span className="kw">4</span>,</div>
 					<div>&nbsp;&nbsp;<span className="fn">available</span>: <span className="kw">true</span></div>
 					<div>{"}"}</div>
-					<div style={{ marginTop: 8 }}><span className="cmt">// open to remote &amp; hybrid</span></div>
+					<div style={{ marginTop: 8 }}><span className="cmt">{"// open to remote & hybrid"}</span></div>
 				</div>
 				<div className="hero-status">
 					<span className="status-dot" />

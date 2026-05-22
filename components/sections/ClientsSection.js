@@ -6,7 +6,7 @@ const CLIENTS = ["Stripe", "N26 Bank", "Shopify", "Contentful", "Vercel", "Linea
 function ClientsSection({ sRef, index, sectionRefs, totalSections }) {
 	return (
 		<section ref={sRef} id="clients" className="section">
-			<div className="section-label">05 — Who I've Worked With</div>
+			<div className="section-label">05 — Who I&apos;ve Worked With</div>
 			<h2 className="section-title">Clients</h2>
 			<div className="section-line" />
 			<div className="clients-grid">
