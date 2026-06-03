@@ -7,7 +7,6 @@ import BiographySection from "@/components/sections/BiographySection";
 import PortfolioSection from "@/components/sections/PortfolioSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
-import ClientsSection from "@/components/sections/ClientsSection";
 import ContactSection from "@/components/sections/ContactSection";
 
 const SECTIONS = [
@@ -16,7 +15,6 @@ const SECTIONS = [
 	{ id: "portfolio", label: "PORTFOLIO" },
 	{ id: "services", label: "SERVICES" },
 	{ id: "experience", label: "EXPERIENCE" },
-	{ id: "clients", label: "CLIENTS" },
 	{ id: "contact", label: "CONTACT" },
 ];
 
@@ -147,8 +145,7 @@ export default function Page() {
 				<PortfolioSection sRef={(el) => (sectionRefs.current[2] = el)} index={2} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
 				<ServicesSection sRef={(el) => (sectionRefs.current[3] = el)} index={3} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
 				<ExperienceSection sRef={(el) => (sectionRefs.current[4] = el)} index={4} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
-				<ClientsSection sRef={(el) => (sectionRefs.current[5] = el)} index={5} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
-				<ContactSection sRef={(el) => (sectionRefs.current[6] = el)} index={6} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
+				<ContactSection sRef={(el) => (sectionRefs.current[5] = el)} index={5} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
 
 				<footer className="footer">
 					<span>

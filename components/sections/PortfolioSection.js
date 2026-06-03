@@ -2,12 +2,12 @@
 import ScrollArrow from "@/components/ScrollArrow";
 
 const PROJECTS = [
-    { cat: "SaaS Platform", name: "Fluxboard", tech: "React · Node.js · PostgreSQL", seed: "business" },
-    { cat: "E-Commerce", name: "Arcane Shop", tech: "Next.js · Stripe · Prisma", seed: "market2" },
-    { cat: "Real-time App", name: "PulseChat", tech: "WebSockets · Redis · React", seed: "abstract" },
-    { cat: "Data Dashboard", name: "Metrics Hub", tech: "React · D3.js · GraphQL", seed: "data9" },
-    { cat: "Mobile Web", name: "TrackWell", tech: "PWA · TypeScript · Firebase", seed: "health4" },
-    { cat: "Dev Tool", name: "CodeVault", tech: "Go · SQLite · React", seed: "tech7" },
+    { cat: "Farm House Search Platform", name: "Family Farms", tech: "Php · JavaScript · MySQL", img: "/project-1.png" },
+    { cat: "Eye Hospital", name: "AB Eye Hospital", tech: "Php · JavaScript · MySQL", img: "/project-2.png" },
+    { cat: "Dentist Website", name: "Dental Art", tech: "Php · JavaScript · MySQL", img: "/project-3.png" },
+    { cat: "Learning Platform", name: "The Safal", tech: "Php · JavaScript · MySQL", img: "/project-4.png" },
+    { cat: "E-Commerce", name: "Bookley", tech: "Php · JavaScript · MySQL", img: "/project-5.png" },
+    { cat: "HRMS", name: "FixHr", tech: "Laravel · React · MySQL", img: "/project-6.png" },
 ];
 
 function PortfolioSection({ sRef, index, sectionRefs, totalSections }) {
@@ -27,7 +27,7 @@ function PortfolioSection({ sRef, index, sectionRefs, totalSections }) {
             <div className="portfolio-grid">
                 {PROJECTS.map((p) => (
                     <div key={p.name} className="port-card">
-                        <img src={`https://picsum.photos/seed/${p.seed}/800/600`} alt={p.name} loading="lazy" />
+                        <img src={p.img} alt={p.name} loading="lazy" />
                         <div className="port-overlay">
                             <div className="port-cat">{p.cat}</div>
                             <div className="port-name">{p.name}</div>
