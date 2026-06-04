@@ -22,13 +22,13 @@ export default function Page() {
 	const [sidebarOpen, setSidebarOpen] = useState(true);
 	const [activeSection, setActiveSection] = useState("home");
 	const [showBackToTop, setShowBackToTop] = useState(false);
-	const sectionRefs = useRef([]);
+	const sectionRefs = useRef<(HTMLElement | null)[]>([]);
 
-	const scrollTo = (i) => {
+	const scrollTo = (i: number) => {
 		sectionRefs.current[i]?.scrollIntoView({ behavior: "smooth" });
 	};
 
-	const handleNavClick = (i) => {
+	const handleNavClick = (i: number) => {
 		scrollTo(i);
 		if (typeof window !== "undefined" && window.innerWidth < 1024) {
 			setSidebarOpen(false);
@@ -66,7 +66,7 @@ export default function Page() {
 			threshold: 0,
 		};
 
-		const observerCallback = (entries) => {
+		const observerCallback: IntersectionObserverCallback = (entries) => {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
 					const index = sectionRefs.current.findIndex((ref) => ref === entry.target);
@@ -136,16 +136,16 @@ export default function Page() {
 
 			<main className={`main${sidebarOpen ? "" : " main--wide"}`}>
 				<HomeSection
-					sRef={(el) => (sectionRefs.current[0] = el)}
+					sRef={(el: HTMLElement | null) => (sectionRefs.current[0] = el)}
 					index={0}
 					sectionRefs={sectionRefs}
 					totalSections={SECTIONS.length}
 				/>
-				<BiographySection sRef={(el) => (sectionRefs.current[1] = el)} index={1} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
-				<PortfolioSection sRef={(el) => (sectionRefs.current[2] = el)} index={2} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
-				<ServicesSection sRef={(el) => (sectionRefs.current[3] = el)} index={3} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
-				<ExperienceSection sRef={(el) => (sectionRefs.current[4] = el)} index={4} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
-				<ContactSection sRef={(el) => (sectionRefs.current[5] = el)} index={5} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
+				<BiographySection sRef={(el: HTMLElement | null) => (sectionRefs.current[1] = el)} index={1} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
+				<PortfolioSection sRef={(el: HTMLElement | null) => (sectionRefs.current[2] = el)} index={2} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
+				<ServicesSection sRef={(el: HTMLElement | null) => (sectionRefs.current[3] = el)} index={3} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
+				<ExperienceSection sRef={(el: HTMLElement | null) => (sectionRefs.current[4] = el)} index={4} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
+				<ContactSection sRef={(el: HTMLElement | null) => (sectionRefs.current[5] = el)} index={5} sectionRefs={sectionRefs} totalSections={SECTIONS.length} />
 
 				<footer className="footer">
 					<span>
