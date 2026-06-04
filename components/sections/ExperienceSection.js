@@ -27,7 +27,7 @@ function ExperienceSection({ sRef, index, sectionRefs, totalSections }) {
                 </div>
                 <div className="timeline">
                     {JOBS.map((j) => (
-                        <div key={j.company} className="tl-item">
+                        <div key={`${j.company}-${j.period}`} className="tl-item">
                             <div className="tl-dot" />
                             <div className="tl-period">{j.period}</div>
                             <div className="tl-role">{j.role}</div>

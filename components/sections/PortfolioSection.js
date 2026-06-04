@@ -2,12 +2,12 @@
 import ScrollArrow from "@/components/ScrollArrow";
 
 const PROJECTS = [
-    { cat: "Farm House Search Platform", name: "Family Farms", tech: "Php · JavaScript · MySQL", img: "/project-1.png" },
-    { cat: "Eye Hospital", name: "AB Eye Hospital", tech: "Php · JavaScript · MySQL", img: "/project-2.png" },
-    { cat: "Dentist Website", name: "Dental Art", tech: "Php · JavaScript · MySQL", img: "/project-3.png" },
-    { cat: "Learning Platform", name: "The Safal", tech: "Php · JavaScript · MySQL", img: "/project-4.png" },
-    { cat: "E-Commerce", name: "Bookley", tech: "Php · JavaScript · MySQL", img: "/project-5.png" },
-    { cat: "HRMS", name: "FixHr", tech: "Laravel · React · MySQL", img: "/project-6.png" },
+    { cat: "HRMS", name: "FixHr", tech: "Laravel · React · MySQL", img: "/project-6.png", link: "https://fixhr.app/" },
+    { cat: "Farm House Search Platform", name: "Family Farms", tech: "Php · JavaScript · MySQL", img: "/project-1.png", link: "https://familyfarms.in/" },
+    { cat: "Eye Hospital", name: "AB Eye Hospital", tech: "Php · JavaScript · MySQL", img: "/project-2.png", link: "https://abeyerpr.in/" },
+    { cat: "Dentist Website", name: "Dental Art", tech: "Php · JavaScript · MySQL", img: "/project-3.png", link: "https://www.dentalartraipur.com/" },
+    { cat: "Learning Platform", name: "The Safal", tech: "Php · JavaScript · MySQL", img: "/project-4.png", link: "https://www.thesafal.com/" },
+    { cat: "E-Commerce", name: "Bookley", tech: "Php · JavaScript · MySQL", img: "/project-5.png", link: "https://bookley.in/" },
 ];
 
 function PortfolioSection({ sRef, index, sectionRefs, totalSections }) {
@@ -26,7 +26,7 @@ function PortfolioSection({ sRef, index, sectionRefs, totalSections }) {
 
             <div className="portfolio-grid">
                 {PROJECTS.map((p) => (
-                    <div key={p.name} className="port-card">
+                    <a href={p.link} target="_blank" rel="noopener noreferrer" key={p.name} className="port-card">
                         <img src={p.img} alt={p.name} loading="lazy" />
                         <div className="port-overlay">
                             <div className="port-cat">{p.cat}</div>
@@ -36,7 +36,7 @@ function PortfolioSection({ sRef, index, sectionRefs, totalSections }) {
                         <div className="port-ext">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
                         </div>
-                    </div>
+                    </a>
                 ))}
             </div>
 

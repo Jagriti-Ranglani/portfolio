@@ -1,40 +1,40 @@
 @import "tailwindcss";
 
 :root {
-	--bg: #070708;
-	--bg-glass: rgba(7, 7, 8, 0.85);
-	--surface: #0e0e10;
-	--surface2: #161618;
-	--accent: #f48fb1;
-	--accent-h: #f06292;
-	--text: #f0ebe3;
-	--muted: #6f6f7a;
-	--muted-h: #ceced9;
-	--border: #1c1c20;
+	--bg: #030712;
+	--bg-glass: rgba(3, 7, 18, 0.85);
+	--surface: #111827;
+	--surface2: #1f2937;
+	--accent: #22d3ee;
+	--accent-h: #67e8f9;
+	--text: #f8fafc;
+	--muted: #94a3b8;
+	--muted-h: #e2e8f0;
+	--border: #334155;
 	--sidebar-w: 240px;
-	--orb-1: rgba(244, 143, 177, 0.15);
-	--orb-2: rgba(185, 160, 255, 0.1);
-	--kw: #b5a0ff;
-	--fn: #7dd3c0;
-	--cmt: #48485b;
+	--orb-1: rgba(34, 211, 238, 0.15);
+	--orb-2: rgba(167, 139, 250, 0.1);
+	--kw: #c084fc;
+	--fn: #4ade80;
+	--cmt: #64748b;
 }
 
 [data-theme='light'] {
-	--bg: #fdfafb;
-	--bg-glass: rgba(253, 250, 251, 0.85);
+	--bg: #f8fafc;
+	--bg-glass: rgba(248, 250, 252, 0.85);
 	--surface: #ffffff;
-	--surface2: #f9f1f3;
-	--accent: #f06292;
-	--accent-h: #e91e63;
-	--text: #2a2123;
-	--muted: #7a6f72;
-	--muted-h: #453d3f;
-	--border: #f0e4e7;
-	--orb-1: rgba(240, 98, 146, 0.12);
-	--orb-2: rgba(185, 160, 255, 0.08);
-	--kw: #8b5cf6;
-	--fn: #059669;
-	--cmt: #9b8d91;
+	--surface2: #f1f5f9;
+	--accent: #0284c7;
+	--accent-h: #0369a1;
+	--text: #020617;
+	--muted: #475569;
+	--muted-h: #0f172a;
+	--border: #cbd5e1;
+	--orb-1: rgba(14, 165, 233, 0.15);
+	--orb-2: rgba(139, 92, 246, 0.1);
+	--kw: #7c3aed;
+	--fn: #047857;
+	--cmt: #475569;
 }
 
 *,
@@ -132,6 +132,7 @@ body {
 	color: var(--text);
 	border-bottom: 1px solid var(--border);
 	user-select: none;
+	text-align: center;
 }
 
 .brand em {
@@ -302,7 +303,7 @@ body {
 .scroll-arrow-btn:hover {
 	border-color: var(--accent);
 	color: var(--accent);
-	background: rgba(244, 143, 177, 0.08);
+	background: rgba(34, 211, 238, 0.08);
 	animation: none;
 	transform: scale(1.1);
 }
@@ -388,7 +389,7 @@ body {
 
 .cv-wrap:hover .cv-btn {
 	transform: translateY(-2px);
-	box-shadow: 0 10px 28px rgba(244, 143, 177, 0.25);
+	box-shadow: 0 10px 28px rgba(34, 211, 238, 0.25);
 }
 
 /* HERO */
@@ -469,6 +470,10 @@ body {
 	background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
 	background-size: 60px 60px;
 	opacity: 0.4;
+}
+
+[data-theme='light'] .hero-grid-lines {
+	opacity: 0.7;
 }
 
 .hero-code {
@@ -709,9 +714,9 @@ body {
 }
 
 .skill-tag--hi {
-	border-color: rgba(244, 143, 177, 0.35);
+	border-color: rgba(34, 211, 238, 0.35);
 	color: var(--accent);
-	background: rgba(244, 143, 177, 0.06);
+	background: rgba(34, 211, 238, 0.06);
 }
 
 .bio-right-title {
@@ -737,7 +742,7 @@ body {
 }
 
 .stack-item:hover {
-	border-color: rgba(244, 143, 177, 0.3);
+	border-color: rgba(34, 211, 238, 0.3);
 }
 
 .stack-icon {

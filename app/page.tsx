@@ -113,7 +113,7 @@ export default function Page() {
 					</svg>
 				</button>
 				<div className="mobile-brand">
-					Jagriti<em>.</em>DEV
+					Jagriti
 				</div>
 				<div style={{ width: 36 }} /> {/* Spacer to balance flex spacing */}
 			</header>
