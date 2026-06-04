@@ -13,7 +13,7 @@ export const metadata = {
   description: "Full Stack Developer Portfolio",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${outfit.className}`}>
