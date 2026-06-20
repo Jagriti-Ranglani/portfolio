@@ -2,10 +2,49 @@
 import ScrollArrow from "@/components/ScrollArrow";
 
 const JOBS = [
-    { period: "2025 — Present", role: "Full Stack Developer", company: "Fixing Dots — Raipur, Chhattisgarh", desc: "Working on an enterprise HRMS platform — building and maintaining modules for employee management, attendance tracking, and TA&DA (travel allowance & daily allowance) with complex rule-based logic and reporting.", tags: ["Laravel", "PHP", "Livewire", "MySQL", "AWS"] },
-    { period: "2024 — 2025", role: "Full Stack Developer", company: "Jiten Softwares — Raipur, Chhattisgarh", desc: "delivered 8+ projects across industries: Billing & logistics management system for bulk material businesses * Loan management platform for group-based microfinance * Dance class scheduling and fee management software * RTO renewal and insurance tracking system Website + PWA for a bathroom products manufacturer (includes a staff sales management app) * Dynamic website for a multispecialty eye hospital Website for a cleaning services & products company * Advanced version of the logistics billing system with expanded features", tags: ["Laravel", "PHP", "Tailwind", "MySQL", "Hostinger"] },
-    { period: "2022 — 2024", role: "Full Stack Developer", company: "Trinity Solutions — Raipur, Chhattisgarh", desc: "Delivered 12+ client projects ranging from SaaS MVPs to e-commerce platforms. Took ownership of backend development across several client projects — designing databases, building server-side logic, and integrating frontends. * Built a full e-commerce website with product catalog and order management flow * Developed billing software for a local business * Engineered a farm discovery & booking platform — search, filter, and book farm houses by location and type", tags: ["Laravel", "PHP", "Razorpay", "MySQL", "Hostinger"] },
-    { period: "2022 — 2022", role: "Junior Developer", company: "Trinity Solutions — Raipur, Chhattisgarh", desc: "First exposure to production web development — assisted in building dynamic, client-facing websites and got hands-on with real project workflows, debugging, and deployment. * Contributed to multiple dynamic websites for local businesses * Learned backend fundamentals in a live project environment", tags: ["HTML/CSS", "JavaScript", "PHP"] },
+    {
+        period: "2025 — Present",
+        role: "Full Stack Developer",
+        company: "Fixing Dots — Raipur, Chhattisgarh",
+        desc: [
+            "Working across two HRMS products — FixHR (500+ users) and a customized enterprise build for a major manufacturing client (200+ users)",
+            "Built and maintained 10+ modules including attendance, leave, gate pass, missed punch, employee management, reports, TADA, and approval workflows",
+            "Developed multi-level dynamic approval systems with hierarchy-based routing, conditional flows, and status tracking",
+            "Integrated DigiLocker KYC for employee onboarding and GST validation + company autofill via Sandbox's paid API",
+            "Built REST APIs consumed by mobile apps alongside full web frontend development",
+            "Managed Git-based deployment workflows, Vite builds, and production server configuration for the enterprise client"
+        ],
+        tags: ["Laravel", "PHP", "Livewire", "MySQL", "AWS", "REST APIs", "Vite"]
+    },
+    {
+        period: "2023 — 2025",
+        role: "Full Stack Developer",
+        company: "Jiten Softwares — Raipur, Chhattisgarh",
+        desc: [
+            "Delivered 8+ projects across industries:",
+            "Billing & logistics management system for bulk material businesses",
+            "Loan management platform for group-based microfinance",
+            "Dance class scheduling and fee management software",
+            "RTO renewal and insurance tracking system",
+            "Website + PWA for a bathroom products manufacturer (includes a staff sales management app)",
+            "Dynamic website for a multispecialty eye hospital",
+            "Website for a cleaning services & products company",
+            "An advanced version of the logistics billing system with expanded features"
+        ],
+        tags: ["Laravel", "PHP", "Tailwind", "MySQL", "Hostinger"]
+    },
+    {
+        period: "2022 — 2023",
+        role: "Junior Full Stack Developer",
+        company: "Trinity Solutions — Raipur, Chhattisgarh",
+        desc: [
+            "Built a full e-commerce platform with 200+ products, inventory management, and Razorpay payment integration",
+            "Developed a farm discovery & booking platform with an availability calendar and online payments",
+            "Delivered 5+ business software products: billing system, multi-level marketing software, gym management (attendance & subscriptions), and a client & quotation management tool for a professional photographer",
+            "Built 6-8 dynamic, responsive client websites across various industries"
+        ],
+        tags: ["Laravel", "PHP", "Razorpay", "MySQL", "Hostinger", "HTML/CSS", "JavaScript"]
+    }
 ];
 
 function ExperienceSection({ sRef, index, sectionRefs, totalSections }) {
@@ -32,8 +71,14 @@ function ExperienceSection({ sRef, index, sectionRefs, totalSections }) {
                             <div className="tl-period">{j.period}</div>
                             <div className="tl-role">{j.role}</div>
                             <div className="tl-company">{j.company}</div>
-                            <p className="tl-desc">{j.desc}</p>
-                            <div className="tl-tags">{j.tags.map((t) => <span key={t} className="tl-tag">{t}</span>)}</div>
+                            <div className="tl-desc" style={{ marginTop: "0.5rem" }}>
+                                <ul style={{ listStyleType: "disc", paddingLeft: "1.5rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                                    {j.desc.map((point, i) => (
+                                        <li key={i}>{point}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="tl-tags" style={{ marginTop: "1rem" }}>{j.tags.map((t) => <span key={t} className="tl-tag">{t}</span>)}</div>
                         </div>
                     ))}
                 </div>
